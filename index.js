@@ -26,15 +26,29 @@ app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-
+// 서울시 공공API 미세먼지 데이터 
+const requestURI = 'http://openapi.seoul.go.kr:8088/48646e726e7373683130375a5444774a/json/RealtimeCityAir/1/25/';
 // index page 
 app.get('/', (req,res) => res.render('pages/index'));
 
 
-// 미세먼지 데이터 get
+// 미세먼지 데이터 (xhr get)
+app.get('/allData' , function(req, res) {
+	request(requestURI)
+		.then(body => {
+			console.log(body);
+			let resJSON = JSON.parse(body);
+			res.json(resJSON);
+		})
+		.catch(err => {
+			console.log(err);
+		})
+})
+
+// 미세먼지 데이터 (xhr post 조건값 있을 때만 이리로 옴...)
 app.post('/sample', function(req, res) {
     // console.log(req.body);
-    let requestURI = 'http://openapi.seoul.go.kr:8088/48646e726e7373683130375a5444774a/json/RealtimeCityAir/1/25/';
+    
     let reqJSON = req.body;
     let urlList = [];
     let resJSON = [];
