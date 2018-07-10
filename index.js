@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 
 // index page 
-app.get('/' (req,res) => res.render('pages/index'));
+app.get('/', (req,res) => res.render('pages/index'));
 
 
 // 미세먼지 데이터 get
