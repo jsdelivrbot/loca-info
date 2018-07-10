@@ -11,11 +11,15 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "request": "^2.81.0",
+    "request": "^2.87.0",
     "tape": "^4.7.0"
   },
   "repository": {
