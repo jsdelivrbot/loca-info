@@ -10,12 +10,12 @@ $ cd loca-info
 $ npm install
 $ npm start
 ```
-
-## webpack-dev-server 실행
-`webpack-dev-server` 는 7777 포트로 실행
+개발시에는 `webpack-dev-server` 실행 후, 
 ```sh
 $ npm run dev-server
 ```
+http://localhost:7777 로 접근
+
 
 ## 운영 배포
 ```
