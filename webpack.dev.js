@@ -30,7 +30,7 @@ module.exports = {
         inline: true,
         historyApiFallback: true,       // 404 일 경우 /index.html 로 서비스
         host: '0.0.0.0',
-        port: 7777,
+        port: 5050,
         contentBase: __dirname + '/public/',
         disableHostCheck: true,     // 외부에서 접속 허용
         proxy: {
