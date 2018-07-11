@@ -10,14 +10,18 @@ https://loca-info.herokuapp.com
 1. heroku-cli 설치
 1. heroku login
 
-#### 로컬 저장소 생성
+#### 로컬 저장소 세팅
 ```sh
 $ git clone https://git.heroku.com/loca-info.git
 $ cd loca-info
 $ npm install
+```
+
+#### 노드서버 실행
+```sh
 $ npm start
 ```
-노드 서버는 5000 번 포트로 실행됩니다
+노드 서버는 5000 번 포트로 실행됩니다. http://localhost:5000
 
 
 #### 리액트 개발시에는
@@ -25,7 +29,7 @@ auto-reloading 을 위해 `webpack-dev-server` 을 실행하고,
 ```sh
 $ npm run dev-server
 ```
-http://localhost:7777 로 접근
+http://localhost:5050 로 접근
 
 <br>
 
