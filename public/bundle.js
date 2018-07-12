@@ -3452,7 +3452,7 @@ module.exports = hoistNonReactStatics;
 /* WEBPACK VAR INJECTION */(function(module) {
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -3464,9 +3464,9 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
-  var enterModule = __webpack_require__(5).enterModule;
+    var enterModule = __webpack_require__(5).enterModule;
 
-  enterModule && enterModule(module);
+    enterModule && enterModule(module);
 })();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3476,72 +3476,72 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Local = function (_React$Component) {
-  _inherits(Local, _React$Component);
+    _inherits(Local, _React$Component);
 
-  function Local(props) {
-    _classCallCheck(this, Local);
+    function Local(props) {
+        _classCallCheck(this, Local);
 
-    var _this = _possibleConstructorReturn(this, (Local.__proto__ || Object.getPrototypeOf(Local)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Local.__proto__ || Object.getPrototypeOf(Local)).call(this, props));
 
-    _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleChange = _this.handleChange.bind(_this);
 
-    _this.state = {
-      word: "",
-      result: []
-    };
+        _this.state = {
+            word: "",
+            result: []
+        };
 
-    fetch("/allData").then(function (res) {
-      return res.json();
-    }).then(function (json) {
-      _this.setState({ result: json.RealtimeCityAir.row });
-    });
-    return _this;
-  }
-
-  _createClass(Local, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({
-        word: e.target.value
-      });
+        fetch("/allData").then(function (res) {
+            return res.json();
+        }).then(function (json) {
+            _this.setState({ result: json.RealtimeCityAir.row });
+        });
+        return _this;
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
 
-      console.log("Local render");
+    _createClass(Local, [{
+        key: "handleChange",
+        value: function handleChange(e) {
+            this.setState({
+                word: e.target.value
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
 
-      var result = this.state.result.filter(function (o) {
-        return o.MSRSTE_NM.match(RegExp(_this2.state.word));
-      });
+            console.log("Local render");
 
-      return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(
-          "div",
-          null,
-          "\uC9C0\uC5ED\uC774\uB984: ",
-          _react2.default.createElement("input", { onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          "pre",
-          null,
-          JSON.stringify(result, null, 2)
-        )
-      );
-    }
-  }, {
-    key: "__reactstandin__regenerateByEval",
-    // @ts-ignore
-    value: function __reactstandin__regenerateByEval(key, code) {
-      // @ts-ignore
-      this[key] = eval(code);
-    }
-  }]);
+            var result = this.state.word ? this.state.result.filter(function (o) {
+                return RegExp(_this2.state.word).test(o.MSRSTE_NM);
+            }) : "지역명을 입력해 보세요(ex, 서대문구)";
 
-  return Local;
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    "div",
+                    null,
+                    "\uC9C0\uC5ED\uC774\uB984: ",
+                    _react2.default.createElement("input", { onChange: this.handleChange })
+                ),
+                _react2.default.createElement(
+                    "pre",
+                    null,
+                    JSON.stringify(result, null, 2)
+                )
+            );
+        }
+    }, {
+        key: "__reactstandin__regenerateByEval",
+        // @ts-ignore
+        value: function __reactstandin__regenerateByEval(key, code) {
+            // @ts-ignore
+            this[key] = eval(code);
+        }
+    }]);
+
+    return Local;
 }(_react2.default.Component);
 
 var _default = Local;
@@ -3549,17 +3549,17 @@ exports.default = _default;
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__(5).default;
+    var reactHotLoader = __webpack_require__(5).default;
 
-  var leaveModule = __webpack_require__(5).leaveModule;
+    var leaveModule = __webpack_require__(5).leaveModule;
 
-  if (!reactHotLoader) {
-    return;
-  }
+    if (!reactHotLoader) {
+        return;
+    }
 
-  reactHotLoader.register(Local, "Local", "/Users/songmingu/Documents/project/loca-info/src/pages/Local.js");
-  reactHotLoader.register(_default, "default", "/Users/songmingu/Documents/project/loca-info/src/pages/Local.js");
-  leaveModule(module);
+    reactHotLoader.register(Local, "Local", "/Users/songmingu/Documents/project/loca-info/src/pages/Local.js");
+    reactHotLoader.register(_default, "default", "/Users/songmingu/Documents/project/loca-info/src/pages/Local.js");
+    leaveModule(module);
 })();
 
 ;
