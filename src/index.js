@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from "./App";
+import Root from './Root';
 
 ReactDOM.render(
   <AppContainer>
-    <App/>
+    <Root/>
   </AppContainer>,
   document.getElementById('root')
 );

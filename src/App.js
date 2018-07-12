@@ -1,32 +1,28 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import AllData from './pages/AllData';
+
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      res : ""
-    }
 
-  
-    fetch("/allData")
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          res: json
-        }
-      )
-    })
         
   }
 
   render() {
     console.log("App render");
 
-  
+    const renderAllData = ({history, match}) => {
+      return <AllData history={history} /> ;
+    }
+
     return (
       <div>
-        <div>allData is..</div>
-        <pre>{JSON.stringify(this.state.res, null,2)}</pre>
+        <Switch>{/* Switch는 첫번째 매칭되는 결과를 렌더링 */}
+          <Route path="/alldata" render={renderAllData} />
+          <Route path="/" render={renderAllData} />
+        </Switch>
       </div>
     );
   }
