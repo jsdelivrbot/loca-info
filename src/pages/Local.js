@@ -27,7 +27,9 @@ export default class Local extends React.Component {
   render() {
     console.log("Local render");
 
-    const result = this.state.result.filter(o => o.MSRSTE_NM.match(RegExp(this.state.word)))
+    const result = this.state.word ?
+                this.state.result.filter(o => RegExp(this.state.word).test(o.MSRSTE_NM)) :
+                "지역명을 입력해 보세요(ex, 서대문구)"
   
     return (
       <div>
