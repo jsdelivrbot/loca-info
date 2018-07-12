@@ -1,5 +1,7 @@
 const express = require('express')
 const path = require('path')
+const fallback = require('express-history-api-fallback');
+
 const PORT = process.env.PORT || 5000
 
 // express()
@@ -71,6 +73,11 @@ app.post('/sample', function(req, res) {
         res.json(resJSON);
     })
 });
+
+// history-api-fallback 등록,
+// 이거는 순서가 중요, 위에 라우터 등록보다 위에 있으면 안됨
+app.use(fallback('index.html', { root: path.join(__dirname, 'public') }));
+
 
 
 app.listen(PORT, function () {
