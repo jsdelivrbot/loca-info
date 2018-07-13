@@ -26,7 +26,7 @@ export default class App extends React.Component {
         <Switch>{/* Switch는 첫번째 매칭되는 결과를 렌더링 */}
           <Route path="/alldata" render={renderAllData} />
           <Route path="/local" render={renderLocal} />
-          <Route path="/" render={renderAllData} />
+          <Route path="/" render={renderLocal} />
         </Switch>
       </div>
     );
