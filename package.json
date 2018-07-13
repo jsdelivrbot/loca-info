@@ -12,7 +12,7 @@
     "dev-build": "node node_modules/webpack/bin/webpack.js --config webpack.dev.js",
     "prod-build": "node node_modules/webpack/bin/webpack.js --config webpack.prod.js",
     "dev-server": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.dev.js",
-    "deploy": "npm run prod-build && git push"
+    "deploy": "npm run prod-build && git commit -am build && git push"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
