@@ -1,4 +1,6 @@
 import React from 'react';
+import "./Local.scss";
+import { Z_DEFAULT_COMPRESSION } from 'zlib';
 
 export default class Local extends React.Component {
   constructor(props) {
@@ -16,7 +18,19 @@ export default class Local extends React.Component {
         .then(json => {
             this.setState({result: json.RealtimeCityAir.row})
         })
+
   }
+
+  componentDidMount(){
+    var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    var options = { //지도를 생성할 때 필요한 기본 옵션
+        center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+        level: 3 //지도의 레벨(확대, 축소 정도)
+    };
+    
+    var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
+  }
+
 
   handleChange(e){
     this.setState({
@@ -32,10 +46,11 @@ export default class Local extends React.Component {
                 "지역명을 입력해 보세요(ex, 서대문구)"
   
     return (
-      <div>
+      <div className="local">
           <div>
               지역이름: <input onChange={this.handleChange}/>
           </div>
+          <div id="map" className="map">hello world</div>
           <pre>{JSON.stringify(result, null, 2)}</pre>
       </div>
     );
