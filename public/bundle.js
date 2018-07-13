@@ -17897,7 +17897,7 @@ exports = module.exports = __webpack_require__(63)(false);
 
 
 // module
-exports.push([module.i, ".local .map {\n  width: 400px;\n  height: 400px;\n  margin: 20px; }\n", ""]);
+exports.push([module.i, ".local .map {\n  width: 300px;\n  height: 300px;\n  margin: 15px; }\n", ""]);
 
 // exports
 
@@ -17993,7 +17993,7 @@ var Local = function (_React$Component) {
             var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
             var options = { //지도를 생성할 때 필요한 기본 옵션
                 center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-                level: 3 //지도의 레벨(확대, 축소 정도)
+                level: 4 //지도의 레벨(확대, 축소 정도)
             };
 
             this.map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
@@ -18265,7 +18265,7 @@ var App = function (_React$Component) {
           null,
           _react2.default.createElement(_reactRouterDom.Route, { path: '/alldata', render: renderAllData }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/local', render: renderLocal }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: renderAllData })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: renderLocal })
         )
       );
     }
