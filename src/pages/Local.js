@@ -22,15 +22,26 @@ export default class Local extends React.Component {
   }
 
   componentDidMount(){
+    console.log("## componentDidMount")
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //지도를 생성할 때 필요한 기본 옵션
         center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
         level: 3 //지도의 레벨(확대, 축소 정도)
     };
     
-    var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
+    this.map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
   }
 
+
+  componentDidUpdate(){
+    var geocoder = new daum.maps.services.Geocoder();
+    geocoder.addressSearch(this.state.word, (result, status) => {
+        if (status === daum.maps.services.Status.OK) {
+            this.map.setCenter(new daum.maps.LatLng(result[0].y, result[0].x));
+        }
+    });      
+      
+  }
 
   handleChange(e){
     this.setState({
