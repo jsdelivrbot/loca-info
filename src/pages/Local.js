@@ -29,6 +29,7 @@ export default class Local extends React.Component {
         level: 4 //지도의 레벨(확대, 축소 정도)
     };
     
+    
     this.map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
   }
 
