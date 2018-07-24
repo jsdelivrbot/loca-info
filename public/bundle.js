@@ -18045,7 +18045,7 @@ var Local = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'map', className: 'map' },
-                    'hello world'
+                    'Loading..'
                 ),
                 _react2.default.createElement(
                     'pre',
