@@ -64,7 +64,7 @@ export default class Local extends React.Component {
           <div>
               지역이름: <input onChange={this.handleChange}/>
           </div>
-          <div id="map" className="map">hello world</div>
+          <div id="map" className="map">Loading..</div>
           <pre>{JSON.stringify(result, null, 2)}</pre>
       </div>
     );
