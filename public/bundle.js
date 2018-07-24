@@ -17989,24 +17989,29 @@ var Local = function (_React$Component) {
     _createClass(Local, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log("## componentDidMount");
-            var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-            var options = { //지도를 생성할 때 필요한 기본 옵션
-                center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-                level: 4 //지도의 레벨(확대, 축소 정도)
-            };
+            var _this2 = this;
 
-            this.map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
+            console.log("## componentDidMount");
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+                var options = { //지도를 생성할 때 필요한 기본 옵션
+                    center: new daum.maps.LatLng(position.coords.latitude, position.coords.longitude), //지도의 중심좌표.
+                    level: 4 //지도의 레벨(확대, 축소 정도)
+                };
+                _this2.map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴      
+            }, function (err) {
+                alert(err.message);
+            });
         }
     }, {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
-            var _this2 = this;
+            var _this3 = this;
 
             var geocoder = new daum.maps.services.Geocoder();
             geocoder.addressSearch(this.state.word, function (result, status) {
                 if (status === daum.maps.services.Status.OK) {
-                    _this2.map.setCenter(new daum.maps.LatLng(result[0].y, result[0].x));
+                    _this3.map.setCenter(new daum.maps.LatLng(result[0].y, result[0].x));
                 }
             });
         }
@@ -18020,12 +18025,12 @@ var Local = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log("Local render");
 
             var result = this.state.word ? this.state.result.filter(function (o) {
-                return RegExp(_this3.state.word).test(o.MSRSTE_NM);
+                return RegExp(_this4.state.word).test(o.MSRSTE_NM);
             }) : "지역명을 입력해 보세요(ex, 서대문구)";
 
             return _react2.default.createElement(
@@ -18074,8 +18079,8 @@ exports.default = _default;
         return;
     }
 
-    reactHotLoader.register(Local, 'Local', 'C:/Users/myData/project/loca-info/src/pages/Local.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/myData/project/loca-info/src/pages/Local.js');
+    reactHotLoader.register(Local, 'Local', '/Users/songmingu/Documents/project/loca-info/src/pages/Local.js');
+    reactHotLoader.register(_default, 'default', '/Users/songmingu/Documents/project/loca-info/src/pages/Local.js');
     leaveModule(module);
 })();
 
@@ -18181,8 +18186,8 @@ exports.default = _default;
     return;
   }
 
-  reactHotLoader.register(AllData, "AllData", "C:/Users/myData/project/loca-info/src/pages/AllData.js");
-  reactHotLoader.register(_default, "default", "C:/Users/myData/project/loca-info/src/pages/AllData.js");
+  reactHotLoader.register(AllData, "AllData", "/Users/songmingu/Documents/project/loca-info/src/pages/AllData.js");
+  reactHotLoader.register(_default, "default", "/Users/songmingu/Documents/project/loca-info/src/pages/AllData.js");
   leaveModule(module);
 })();
 
@@ -18294,8 +18299,8 @@ exports.default = _default;
     return;
   }
 
-  reactHotLoader.register(App, 'App', 'C:/Users/myData/project/loca-info/src/App.js');
-  reactHotLoader.register(_default, 'default', 'C:/Users/myData/project/loca-info/src/App.js');
+  reactHotLoader.register(App, 'App', '/Users/songmingu/Documents/project/loca-info/src/App.js');
+  reactHotLoader.register(_default, 'default', '/Users/songmingu/Documents/project/loca-info/src/App.js');
   leaveModule(module);
 })();
 
@@ -18446,8 +18451,8 @@ exports.default = _default;
         return;
     }
 
-    reactHotLoader.register(Root, 'Root', 'C:/Users/myData/project/loca-info/src/Root.js');
-    reactHotLoader.register(_default, 'default', 'C:/Users/myData/project/loca-info/src/Root.js');
+    reactHotLoader.register(Root, 'Root', '/Users/songmingu/Documents/project/loca-info/src/Root.js');
+    reactHotLoader.register(_default, 'default', '/Users/songmingu/Documents/project/loca-info/src/Root.js');
     leaveModule(module);
 })();
 
